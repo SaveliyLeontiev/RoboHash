@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		A1884BE122BB88EC00354636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1884BE022BB88EC00354636 /* AppDelegate.swift */; };
-		A1884BE322BB88EC00354636 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1884BE222BB88EC00354636 /* ViewController.swift */; };
+		A1884BE322BB88EC00354636 /* RoboImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1884BE222BB88EC00354636 /* RoboImageViewController.swift */; };
 		A1884BE622BB88EC00354636 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1884BE422BB88EC00354636 /* Main.storyboard */; };
 		A1884BE822BB88ED00354636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1884BE722BB88ED00354636 /* Assets.xcassets */; };
 		A1884BEB22BB88ED00354636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1884BE922BB88ED00354636 /* LaunchScreen.storyboard */; };
+		A1884BF422BB95A600354636 /* RoboImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1884BF322BB95A600354636 /* RoboImagePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A1884BDD22BB88EC00354636 /* RoboHash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoboHash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1884BE022BB88EC00354636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A1884BE222BB88EC00354636 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A1884BE222BB88EC00354636 /* RoboImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboImageViewController.swift; sourceTree = "<group>"; };
 		A1884BE522BB88EC00354636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1884BE722BB88ED00354636 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A1884BEA22BB88ED00354636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1884BEC22BB88ED00354636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1884BF322BB95A600354636 /* RoboImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboImagePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		A1884BDF22BB88EC00354636 /* RoboHash */ = {
 			isa = PBXGroup;
 			children = (
+				A1884BF222BB958300354636 /* RoboImageModule */,
 				A1884BE022BB88EC00354636 /* AppDelegate.swift */,
-				A1884BE222BB88EC00354636 /* ViewController.swift */,
 				A1884BE422BB88EC00354636 /* Main.storyboard */,
 				A1884BE722BB88ED00354636 /* Assets.xcassets */,
 				A1884BE922BB88ED00354636 /* LaunchScreen.storyboard */,
 				A1884BEC22BB88ED00354636 /* Info.plist */,
 			);
 			path = RoboHash;
+			sourceTree = "<group>";
+		};
+		A1884BF222BB958300354636 /* RoboImageModule */ = {
+			isa = PBXGroup;
+			children = (
+				A1884BE222BB88EC00354636 /* RoboImageViewController.swift */,
+				A1884BF322BB95A600354636 /* RoboImagePresenter.swift */,
+			);
+			path = RoboImageModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1884BE322BB88EC00354636 /* ViewController.swift in Sources */,
+				A1884BE322BB88EC00354636 /* RoboImageViewController.swift in Sources */,
 				A1884BE122BB88EC00354636 /* AppDelegate.swift in Sources */,
+				A1884BF422BB95A600354636 /* RoboImagePresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
