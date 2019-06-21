@@ -13,6 +13,9 @@
 		A1884BE822BB88ED00354636 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1884BE722BB88ED00354636 /* Assets.xcassets */; };
 		A1884BEB22BB88ED00354636 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1884BE922BB88ED00354636 /* LaunchScreen.storyboard */; };
 		A1884BF422BB95A600354636 /* RoboImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1884BF322BB95A600354636 /* RoboImagePresenter.swift */; };
+		A1884BF722BBA68800354636 /* RoboImageServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1884BF622BBA68800354636 /* RoboImageServiceType.swift */; };
+		A1884BF922BBA6CE00354636 /* RoboImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1884BF822BBA6CE00354636 /* RoboImageService.swift */; };
+		A1EDFE2222BCCA93005D5A43 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EDFE2122BCCA93005D5A43 /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		A1884BEA22BB88ED00354636 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1884BEC22BB88ED00354636 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1884BF322BB95A600354636 /* RoboImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboImagePresenter.swift; sourceTree = "<group>"; };
+		A1884BF622BBA68800354636 /* RoboImageServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboImageServiceType.swift; sourceTree = "<group>"; };
+		A1884BF822BBA6CE00354636 /* RoboImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoboImageService.swift; sourceTree = "<group>"; };
+		A1EDFE2122BCCA93005D5A43 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,8 @@
 		A1884BDF22BB88EC00354636 /* RoboHash */ = {
 			isa = PBXGroup;
 			children = (
+				A1EDFE2022BCCA88005D5A43 /* Utils */,
+				A1884BF522BBA67600354636 /* RoboImageService */,
 				A1884BF222BB958300354636 /* RoboImageModule */,
 				A1884BE022BB88EC00354636 /* AppDelegate.swift */,
 				A1884BE422BB88EC00354636 /* Main.storyboard */,
@@ -73,6 +81,23 @@
 				A1884BF322BB95A600354636 /* RoboImagePresenter.swift */,
 			);
 			path = RoboImageModule;
+			sourceTree = "<group>";
+		};
+		A1884BF522BBA67600354636 /* RoboImageService */ = {
+			isa = PBXGroup;
+			children = (
+				A1884BF622BBA68800354636 /* RoboImageServiceType.swift */,
+				A1884BF822BBA6CE00354636 /* RoboImageService.swift */,
+			);
+			path = RoboImageService;
+			sourceTree = "<group>";
+		};
+		A1EDFE2022BCCA88005D5A43 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A1EDFE2122BCCA93005D5A43 /* Result.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,7 +171,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1EDFE2222BCCA93005D5A43 /* Result.swift in Sources */,
+				A1884BF922BBA6CE00354636 /* RoboImageService.swift in Sources */,
 				A1884BE322BB88EC00354636 /* RoboImageViewController.swift in Sources */,
+				A1884BF722BBA68800354636 /* RoboImageServiceType.swift in Sources */,
 				A1884BE122BB88EC00354636 /* AppDelegate.swift in Sources */,
 				A1884BF422BB95A600354636 /* RoboImagePresenter.swift in Sources */,
 			);

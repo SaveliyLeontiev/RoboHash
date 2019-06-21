@@ -6,12 +6,19 @@
 import UIKit
 
 class RoboImageViewController: UIViewController {
-    private let roboImagePresenter = RoboImagePresenter()
+    private let roboImagePresenter = RoboImagePresenter(roboImageService: RoboImageService())
 
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var generateButton: UIButton!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+
+    var isLoading: Bool = false {
+        didSet {
+            activityIndicator.isHidden = !isLoading
+            imageView.alpha = isLoading ? 0.2 : 1
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +34,7 @@ private extension RoboImageViewController {
         nameField.autocorrectionType = .no
         generateButton.addTarget(self, action: #selector(generateButtonAction(_:)),
                                  for: .touchUpInside)
-        setLoading(false)
+        isLoading = false
     }
 
     func configurePresenter() {
@@ -37,6 +44,27 @@ private extension RoboImageViewController {
 
 // MARK: - RoboImagePresenterDelegate
 extension RoboImageViewController: RoboImagePresenterDelegate {
+    func perfomEmptyNameAnimation() {
+        print("TODO: add empty animation")
+    }
+
+    func setImage(_ image: UIImage) {
+        imageView.image = image
+    }
+
+    func showError(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default) { _ in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+
+    func setLoading(isLoading: Bool) {
+        self.isLoading = isLoading
+    }
+
 }
 
 // MARK: - UITextFieldDelegate
@@ -50,11 +78,8 @@ extension RoboImageViewController: UITextFieldDelegate {
 extension RoboImageViewController {
     @objc
     func generateButtonAction(_ sender: Any) {
-        print("TODO: Add generation action")
-    }
-
-    private func setLoading(_ isLoading: Bool) {
-        activityIndicator.isHidden = !isLoading
-        imageView.alpha = isLoading ? 0.2 : 1
+        guard !isLoading else { return }
+        nameField.resignFirstResponder()
+        roboImagePresenter.generateImage(name: nameField.text)
     }
 }
