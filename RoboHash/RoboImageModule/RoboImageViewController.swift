@@ -50,7 +50,11 @@ private extension RoboImageViewController {
 // MARK: - RoboImagePresenterDelegate
 extension RoboImageViewController: RoboImagePresenterDelegate {
     func perfomEmptyNameAnimation() {
-        print("TODO: add empty animation")
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.07, initialSpringVelocity: 3, options: [], animations: {
+            self.nameField.frame.origin.x += 5
+        }) { _ in
+            self.nameField.frame.origin.x -= 5
+        }
     }
 
     func setImage(_ image: UIImage) {
