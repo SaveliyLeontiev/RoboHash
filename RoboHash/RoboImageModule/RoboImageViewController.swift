@@ -32,9 +32,14 @@ private extension RoboImageViewController {
         nameField.delegate = self
         nameField.autocapitalizationType = .none
         nameField.autocorrectionType = .no
+
         generateButton.addTarget(self, action: #selector(generateButtonAction(_:)),
                                  for: .touchUpInside)
+
         isLoading = false
+
+        let gr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
+        imageView.addGestureRecognizer(gr)
     }
 
     func configurePresenter() {
@@ -77,9 +82,36 @@ extension RoboImageViewController: UITextFieldDelegate {
 // MARK: - Actions
 extension RoboImageViewController {
     @objc
-    func generateButtonAction(_ sender: Any) {
+    func generateButtonAction(_ sender: UIButton) {
         guard !isLoading else { return }
         nameField.resignFirstResponder()
         roboImagePresenter.generateImage(name: nameField.text)
+    }
+
+    @objc
+    func handleLongPress(_ sender: UILongPressGestureRecognizer) {
+        guard let image = imageView.image else {
+            return
+        }
+
+        if sender.state == .began {
+            showSaveImageActionSheet(image: image)
+        }
+    }
+
+    func showSaveImageActionSheet(image: UIImage) {
+        let actionSheet = UIAlertController(title: nil, message: "Do you want to save this image?",
+                                            preferredStyle: .actionSheet)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { [weak self] _ in
+            self?.roboImagePresenter.saveImage(image: image)
+        }
+        actionSheet.addAction(saveAction)
+
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            actionSheet.dismiss(animated: true, completion: nil)
+        }
+        actionSheet.addAction(cancelAction)
+
+        present(actionSheet, animated: true, completion: nil)
     }
 }

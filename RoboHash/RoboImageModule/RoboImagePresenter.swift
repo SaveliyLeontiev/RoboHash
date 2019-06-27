@@ -40,4 +40,8 @@ extension RoboImagePresenter {
             self?.delegate?.setLoading(isLoading: false)
         }
     }
+
+    func saveImage(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+    }
 }
