@@ -13,8 +13,9 @@ class RoboImageViewController: UIViewController {
     @IBOutlet private weak var generateButton: UIButton!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
 
-    var isLoading: Bool = false {
+    private var isLoading: Bool = false {
         didSet {
+            guard isViewLoaded else { return }
             activityIndicator.isHidden = !isLoading
             imageView.alpha = isLoading ? 0.2 : 1
         }
